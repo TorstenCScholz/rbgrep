@@ -1,9 +1,7 @@
 #!/usr/bin/ruby
 
 def filter_by_pattern(pattern, lines)
-  lines.select do |line|
-    line =~ /#{pattern}/i
-  end
+  lines.select { |line| line =~ /#{pattern}/i }
 end
 
 def main(argv)
@@ -11,9 +9,7 @@ def main(argv)
 
   output = filter_by_pattern(pattern, $<.readlines)
 
-  output.each do |line|
-    puts line
-  end
+  output.each { |line| puts line }
 end
 
 if __FILE__ == $0
